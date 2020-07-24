@@ -1,9 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const { mongosecret } = require(__dirname + "/secrets.js");
+/*const { mongosecret } = require(__dirname + "/secrets.js");*/
 const { v4: uuidv4 } = require("uuid");
 
+const mongosecret = process.env.MONGOSECRET;
 const port = process.env.PORT || 3001;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
